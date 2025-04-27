@@ -9,15 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
-    <!-- faviocns links -->
-   <!-- In the <head> section, replace the favicon links -->
-<!-- faviocns links -->
-
-<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-
-
-
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
 <body class="min-h-screen bg-white" style="scroll-behavior: smooth;">
     <!-- Navigation -->
@@ -27,41 +19,58 @@
                 <div class="flex items-center">
                     <span class="text-xl font-bold text-gray-900">PS</span>
                 </div>
-                <div class="flex items-center space-x-8">
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
                     <a href="#home" class="text-gray-700 hover:text-blue-600">Home</a>
                     <a href="#about" class="text-gray-700 hover:text-blue-600">About</a>
                     <a href="#projects" class="text-gray-700 hover:text-blue-600">Projects</a>
                     <a href="#skills" class="text-gray-700 hover:text-blue-600">Skills</a>
                     <a href="#contact" class="text-gray-700 hover:text-blue-600">Contact</a>
                 </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-sm">
+            <div class="px-4 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block text-gray-700 hover:text-blue-600 py-2">Home</a>
+                <a href="#about" class="block text-gray-700 hover:text-blue-600 py-2">About</a>
+                <a href="#projects" class="block text-gray-700 hover:text-blue-600 py-2">Projects</a>
+                <a href="#skills" class="block text-gray-700 hover:text-blue-600 py-2">Skills</a>
+                <a href="#contact" class="block text-gray-700 hover:text-blue-600 py-2">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section with 3D Globe -->
-    <section id="home" class="pt-32 pb-20 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden">
+    <section id="home" class="pt-20 sm:pt-24 md:pt-32 pb-20 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden" style="top:60px">
         <div id="three-canvas" class="absolute top-0 left-0 w-full h-full z-0"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center" data-aos="fade-up" data-aos-duration="1000">
-                <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl md:text-6xl">
+                <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl md:text-5xl" >
                     Panasabotla Sreenivasulu
                 </h1>
-                <p class="mt-3 text-xl text-gray-600 sm:mt-5" data-aos="fade-up" data-aos-delay="200">
+                <p class="mt-3 text-lg text-gray-600 sm:mt-5 sm:text-xl" data-aos="fade-up" data-aos-delay="200">
                     Web Developer & Data Analyst
                 </p>
-                <p class="mt-3 text-lg text-gray-500" data-aos="fade-up" data-aos-delay="400">
+                <p class="mt-3 text-base text-gray-500 sm:text-lg" data-aos="fade-up" data-aos-delay="400">
                     Building User-Friendly Web Apps and Insightful Data Dashboards
                 </p>
                 <div class="mt-8 flex justify-center space-x-6" data-aos="zoom-in" data-aos-delay="600">
                     <a href="https://www.linkedin.com/in/sreenivasulu-panasabotla-1803b220a" 
                        target="_blank" rel="noopener noreferrer"
                        class="text-gray-500 hover:text-blue-600">
-                        <i class="fab fa-linkedin text-4xl"></i>
+                        <i class="fab fa-linkedin text-3xl sm:text-4xl"></i>
                     </a>
                     <a href="https://github.com/Sreenivasulu1914" 
                        target="_blank" rel="noopener noreferrer"
                        class="text-gray-500 hover:text-blue-900">
-                        <i class="fab fa-github text-4xl" ></i>
+                        <i class="fab fa-github text-3xl sm:text-4xl"></i>
                     </a>
                 </div>
             </div>
@@ -69,26 +78,26 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20">
+    <section id="about" class="py-16 sm:py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center" data-aos="fade-up" data-aos-duration="1000">
                 <div class="relative">
                     <img src="{{ url_for('static', filename='images/sreenu_pic.jpg') }}" 
                          alt="Panasabotla Sreenivasulu" 
-                         class="rounded-lg shadow-lg object-cover w-full h-[400px] lg:h-auto" 
+                         class="rounded-lg shadow-lg object-cover w-full h-64 sm:h-80 lg:h-auto" 
                          data-aos="zoom-in" data-aos-delay="200">
                 </div>
-                <div class="mt-10 lg:mt-0">
-                    <h2 class="text-3xl font-bold text-gray-900">About Me</h2>
-                    <p class="mt-4 text-lg text-gray-600" data-aos="fade-right" data-aos-delay="400">
+                <div class="mt-8 lg:mt-0">
+                    <h2 class="text-2xl font-bold text-gray-900 sm:text-3xl">About Me</h2>
+                    <p class="mt-4 text-base text-gray-600 sm:text-lg" data-aos="fade-right" data-aos-delay="400">
                         I'm a passionate MCA graduate skilled in web development and data analysis. With expertise in Python, Flask, MySQL, HTML, CSS, JavaScript, and Power BI, I create intuitive interfaces and insightful dashboards. My goal is to design user-friendly solutions that make life easier.
                     </p>
-                    <p class="mt-4 text-lg text-gray-600" data-aos="fade-right" data-aos-delay="600">
+                    <p class="mt-4 text-base text-gray-600 sm:text-lg" data-aos="fade-right" data-aos-delay="600">
                         In my free time, I enjoy playing cricket, listening to music, and reading books. I’m fluent in English and Telugu, and I’m always eager to learn more!
                     </p>
-                    <div class="mt-8" data-aos="zoom-in" data-aos-delay="800">
+                    <div class="mt-6 sm:mt-8" data-aos="zoom-in" data-aos-delay="800">
                         <a href="{{ url_for('static', filename='SREENIVASULU-P.pdf') }}" 
-                           class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                           class="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
                             <i class="fas fa-download mr-2"></i> Download Resume
                         </a>
                     </div>
@@ -98,31 +107,29 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-50">
+    <section id="projects" class="py-16 sm:py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-900 text-center" data-aos="fade-up" data-aos-duration="1000">Projects</h2>
-            <div class="mt-12 grid gap-8 lg:grid-cols-2" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="text-2xl font-bold text-gray-900 text-center sm:text-3xl" data-aos="fade-up" data-aos-duration="1000">Projects</h2>
+            <div class="mt-8 sm:mt-12 grid gap-6 sm:gap-8 lg:grid-cols-2" data-aos="fade-up" data-aos-delay="200">
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="flip-left" data-aos-delay="400">
                     <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&q=80&w=800&h=400"
-                    alt="ODI Cricket Analysis Dashboard"
-
-
-                         class="w-full h-48 object-cover ">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900">ODI Cricket Analysis Dashboard</h3>
-                        <p class="mt-2 text-gray-600">
+                         alt="ODI Cricket Analysis Dashboard"
+                         class="w-full h-40 sm:h-48 object-cover">
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-lg font-bold text-gray-900 sm:text-xl">ODI Cricket Analysis Dashboard</h3>
+                        <p class="mt-2 text-gray-600 text-sm sm:text-base">
                             Collaborated with MAHE, Bangalore, to build a web dashboard for ODI cricket stats. Features interactive visualizations of player performance and team trends using Python, Flask, and MySQL backend, with a Bootstrap, HTML, CSS, and JavaScript frontend.
                         </p>
                         <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">UI/UX</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Web Development</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Data Visualization</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Python</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Flask</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">MySQL</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Bootstrap</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm">UI/UX</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm">Web Development</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm">Data Visualization</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm">Python</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm">Flask</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm">MySQL</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm">Bootstrap</span>
                         </div>
-                        <a href="#" class="mt-6 inline-flex items-center text-blue-600 hover:text-blue-700">
+                        <a href="#" class="mt-4 sm:mt-6 inline-flex items-center text-blue-600 hover:text-blue-700 text-sm sm:text-base">
                             Link coming soon
                             <i class="fas fa-external-link-alt ml-2"></i>
                         </a>
@@ -130,22 +137,22 @@
                 </div>
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="flip-left" data-aos-delay="600">
                     <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80&w=800&h=400"
-                    alt="E-Commerce Portal"
-                         class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900">E-Commerce Portal</h3>
-                        <p class="mt-2 text-gray-600">
+                         alt="E-Commerce Portal"
+                         class="w-full h-40 sm:h-48 object-cover">
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-lg font-bold text-gray-900 sm:text-xl">E-Commerce Portal</h3>
+                        <p class="mt-2 text-gray-600 text-sm sm:text-base">
                             Developed a full-stack e-commerce site with user and admin panels. Built with Python, Flask, MySQL for secure product and order management, and HTML, CSS, Bootstrap, JavaScript for a smooth, responsive UI.
                         </p>
                         <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">UI/UX</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Web Development</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Flask</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">MySQL</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Bootstrap</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">JavaScript</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm">UI/UX</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm">Web Development</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm">Flask</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm">MySQL</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm">Bootstrap</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs sm:text-sm">JavaScript</span>
                         </div>
-                        <a href="https://e-commerce-portal-rvwf.onrender.com" class="mt-6 inline-flex items-center text-blue-600 hover:text-blue-700">
+                        <a href="https://e-commerce-portal-rvwf.onrender.com" class="mt-4 sm:mt-6 inline-flex items-center text-blue-600 hover:text-blue-700 text-sm sm:text-base">
                             View Details
                             <i class="fas fa-external-link-alt ml-2"></i>
                         </a>
@@ -156,13 +163,13 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20">
+    <section id="skills" class="py-16 sm:py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-900 text-center" data-aos="fade-up" data-aos-duration="1000">Skills</h2>
-            <div class="mt-12 grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4" data-aos="zoom-in-up" data-aos-delay="200">
+            <h2 class="text-2xl font-bold text-gray-900 text-center sm:text-3xl" data-aos="fade-up" data-aos-duration="1000">Skills</h2>
+            <div class="mt-8 sm:mt-12 grid grid-cols-2 gap-4 sm:gap-8 sm:grid-cols-3 lg:grid-cols-4" data-aos="zoom-in-up" data-aos-delay="200">
                 {% for skill in ['Python', 'Flask', 'MySQL', 'HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Power BI', 'Advanced Excel', 'Wireframing', 'User Research', 'MLOps1-Azure'] %}
-                    <div class="bg-white p-6 rounded-lg shadow-md text-center" data-aos="zoom-in" data-aos-delay="100">
-                        <p class="text-lg font-medium text-gray-900">{{ skill }}</p>
+                    <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md text-center" data-aos="zoom-in" data-aos-delay="100">
+                        <p class="text-base font-medium text-gray-900 sm:text-lg">{{ skill }}</p>
                     </div>
                 {% endfor %}
             </div>
@@ -170,10 +177,10 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-50">
+    <section id="contact" class="py-16 sm:py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-900 text-center" data-aos="fade-up" data-aos-duration="1000">Contact Me</h2>
-            <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="text-2xl font-bold text-gray-900 text-center sm:text-3xl" data-aos="fade-up" data-aos-duration="1000">Contact Me</h2>
+            <div class="mt-8 sm:mt-12 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8" data-aos="fade-up" data-aos-delay="200">
                 <div>
                     {% with messages = get_flashed_messages(with_categories=true) %}
                         {% if messages %}
@@ -213,28 +220,28 @@
                 </div>
                 <div class="space-y-6">
                     <div class="flex items-center" data-aos="fade-right" data-aos-delay="400">
-                        <i class="fas fa-envelope w-6 h-6 text-blue-600 text-2xl"></i>&nbsp;&nbsp; 
-                        <a href="mailto:sreenivasulupanasabotla@gmail.com" class="ml-3 text-gray-600 hover:text-blue-600">
+                        <i class="fas fa-envelope w-6 h-6 text-blue-600 text-xl sm:text-2xl"></i>   
+                        <a href="mailto:sreenivasulupanasabotla@gmail.com" class="ml-3 text-gray-600 hover:text-blue-600 text-sm sm:text-base">
                             sreenivasulupanasabotla@gmail.com
                         </a>
                     </div>
                     <div class="flex items-center" data-aos="fade-right" data-aos-delay="600">
-                        <i class="fas fa-phone w-6 h-6 text-blue-600 text-2xl"></i>&nbsp;&nbsp; 
-                        <a href="tel:+917680901559" class="ml-3 text-gray-600 hover:text-blue-600">
+                        <i class="fas fa-phone w-6 h-6 text-blue-600 text-xl sm:text-2xl"></i>   
+                        <a href="tel:+917680901559" class="ml-3 text-gray-600 hover:text-blue-600 text-sm sm:text-base">
                             +91 7680901559
                         </a>
                     </div>
                     <div class="flex items-center" data-aos="fade-right" data-aos-delay="800">
-                        <i class="fab fa-linkedin w-6 h-6 text-blue-600 text-2xl"></i>&nbsp;&nbsp; 
+                        <i class="fab fa-linkedin w-6 h-6 text-blue-600 text-xl sm:text-2xl"></i>   
                         <a href="https://www.linkedin.com/in/sreenivasulu-panasabotla-1803b220a" target="_blank" rel="noopener noreferrer"
-                           class="ml-3 text-gray-600 hover:text-blue-600">
+                           class="ml-3 text-gray-600 hover:text-blue-600 text-sm sm:text-base">
                             LinkedIn Profile
                         </a>
                     </div>
                     <div class="flex items-center" data-aos="fade-right" data-aos-delay="1000">
-                        <i class="fab fa-github w-6 h-6 text-blue-600 text-2xl"></i> &nbsp;&nbsp;
+                        <i class="fab fa-github w-6 h-6 text-blue-600 text-xl sm:text-2xl"></i>   
                         <a href="https://github.com/Sreenivasulu1914" target="_blank" rel="noopener noreferrer"
-                           class="ml-3 text-gray-600 hover:text-blue-600 ">
+                           class="ml-3 text-gray-600 hover:text-blue-600 text-sm sm:text-base">
                             GitHub Profile
                         </a>
                     </div>
@@ -246,10 +253,11 @@
     <!-- Footer -->
     <footer class="bg-white border-t" data-aos="fade-up" data-aos-duration="1000">
         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <p class="text-center text-gray-500">
+            <p class="text-center text-gray-500 text-sm sm:text-base">
                 © 2025 Panasabotla Sreenivasulu. Built with passion.
             </p>
-        </footer>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -259,6 +267,21 @@
         AOS.init({
             duration: 800,
             once: true
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
         });
 
         // Three.js 3D Globe Animation
@@ -285,7 +308,7 @@
 
         // Resize Handler
         window.addEventListener('resize', () => {
-            const width = Math.min(window.innerWidth, window.innerWidth);
+            const width = window.innerWidth;
             const height = window.innerHeight;
             renderer.setSize(width, height);
             camera.aspect = width / height;
